@@ -31,6 +31,7 @@
 
 
 #include "thexport.h"
+#include <string>
 
 
 /**
@@ -66,6 +67,7 @@ enum {
   TT_EXPDB_FMT_UNKNOWN = 0,  ///< Unknown option
   TT_EXPDB_FMT_SQL,  ///< sql
   TT_EXPDB_FMT_CSV,  ///< list of shots in CSV format
+  TT_EXPDB_FMT_QTH,  ///< qtherion JSON format
 };
 
 
@@ -74,8 +76,9 @@ enum {
  */
  
 static const thstok thtt_expdb_fmt[] = {
-  {"sql", TT_EXPDB_FMT_SQL},
   {"csv", TT_EXPDB_FMT_CSV},
+  {"qth", TT_EXPDB_FMT_QTH},
+  {"sql", TT_EXPDB_FMT_SQL},
   {NULL, TT_EXPDB_FMT_UNKNOWN}
 };
 
@@ -95,6 +98,12 @@ class thexpdb : public thexport {
   
   void export_csv_file(class thdatabase * dbp);
 
+  void export_qth_file(class thdatabase * dbp);
+  
+  void export_qth_survey(std::string fpath, class thsurvey * srv);
+  
+  void export_qth_scrap(std::string fpath, class thscrap * srv);  
+  
   public:
   
   thexpdb(); ///< Default constructor.
@@ -103,28 +112,28 @@ class thexpdb : public thexport {
    * Parse model export options.
    */
    
-  virtual void parse_options(int & argx, int nargs, char ** args);
+  void parse_options(int & argx, int nargs, char ** args) override;
 
   
   /**
    * Dump object into file.
    */
    
-  virtual void dump_body(FILE * xf);
+  void dump_body(FILE * xf) override;
 
 
   /**
    * Dump object into file.
    */
    
-  virtual void dump_header(FILE * xf);
+  void dump_header(FILE * xf) override;
   
 
   /**
    * Make export.
    */
    
-  virtual void process_db(class thdatabase * dbp);
+  void process_db(class thdatabase * dbp) override;
   
 };
 

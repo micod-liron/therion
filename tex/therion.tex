@@ -89,7 +89,7 @@
     \edef\pdfxformattr                {\pdfvariable xformattr}
     \edef\pdfxformresources           {\pdfvariable xformresources}
     \edef\pdfpkmode                   {\pdfvariable pkmode}
-    \edef\pdfsuppressoptionalinfo     {\pdfvariable suppressoptionalinfo }
+    \edef\pdfsuppressptexinfo         {\pdfvariable suppressoptionalinfo }
     \edef\pdftrailerid                {\pdfvariable trailerid }
     \let\pdfpagewidth      \pagewidth
     \let\pdfpageheight     \pageheight
@@ -214,10 +214,12 @@
        \hsize=\tmpdimen\rightskip=0pt plus \tmpdimen minus 0pt\relax\the\legendtextsize #2\vskip1dd}\hss}%
 }
 
+\let\colorlegendsymbolbox=\legendsymbolbox
+
 \def\colorlegendbox#1{%
   \setbox\xxx=\hbox to 36bp{\PL{q #1 0 0 36 24 re f Q}\hfil}%
   \ht\xxx=25bp\dp\xxx=0bp
-  \immediate\pdfxform resources{/ExtGState \the\resid\space 0 R}\xxx
+  \immediate\pdfxform resources{/ExtGState \the\resid\space 0 R \colorres}\xxx
 }
 
 
@@ -227,6 +229,15 @@
 \newdimen\ycorr
 
 \def\PB#1#2#3{\rlap{\kern#1bp\raise#2bp\hbox{\pdfrefxform#3}}} %placebox
+
+\def\setref#1#2{\expandafter\edef\csname thREFS:#1\endcsname{#2}}
+\def\getref#1{%
+  \ifcsname thREFS:#1\endcsname
+    \csname thREFS:#1\endcsname
+  \else
+    \csname #1\endcsname   % fallback for northarrow/scalebar when using registers
+  \fi
+}
 
 \def\gridcoord#1#2{\hbox to0pt{%
   \ifnum#1=1\hss\fi
@@ -325,7 +336,31 @@
   \edef\tmpdef{\expandafter\SKIPPT\tmpdef}%
 }
 
-\def\color[#1 #2 #3]{%
+\def\cmykcolor[#1 #2 #3 #4]{%
+  \tmpdimen=#1pt%
+  \divide\tmpdimen100
+  \edef\tmpdef{\the\tmpdimen}%
+  \edef\tmpdef{\expandafter\SKIPPT\tmpdef}%
+  \pdfliteral{\tmpdef}%
+  \tmpdimen=#2pt%
+  \divide\tmpdimen100
+  \edef\tmpdef{\the\tmpdimen}%
+  \edef\tmpdef{\expandafter\SKIPPT\tmpdef}%
+  \pdfliteral{\tmpdef}%
+  \tmpdimen=#3pt%
+  \divide\tmpdimen100
+  \edef\tmpdef{\the\tmpdimen}%
+  \edef\tmpdef{\expandafter\SKIPPT\tmpdef}%
+  \pdfliteral{\tmpdef}%
+  \tmpdimen=#4pt%
+  \divide\tmpdimen100
+  \edef\tmpdef{\the\tmpdimen}%
+  \edef\tmpdef{\expandafter\SKIPPT\tmpdef}%
+  \pdfliteral{\tmpdef}%
+  \pdfliteral{k}
+}
+
+\def\rgbcolor[#1 #2 #3]{%
   \tmpdimen=#1pt%
   \divide\tmpdimen100
   \edef\tmpdef{\the\tmpdimen}%
@@ -343,6 +378,23 @@
   \pdfliteral{\tmpdef}%
   \pdfliteral{rg}
 }
+\let\color\rgbcolor
+
+\def\graycolor[#1]{%
+  \tmpdimen=#1pt%
+  \divide\tmpdimen100
+  \edef\tmpdef{\the\tmpdimen}%
+  \edef\tmpdef{\expandafter\SKIPPT\tmpdef}%
+  \pdfliteral{\tmpdef}%
+  \pdfliteral{g}
+}
+
+\def\modelcmyk{cmyk}
+\def\modelrgb{rgb}
+\def\modelgray{grayscale}
+\def\black{\pdfliteral{\ifx\OutputColormodel\modelcmyk 0 0 0 1 k\else
+           \ifx\OutputColormodel\modelrgb 0 0 0 rg\else
+           0 g\fi\fi}}
 
 % actual placing of the page elements
 
@@ -358,12 +410,13 @@
         \medskip
         \hbox{\qquad\qquad
           \vtop{%
-            \hbox to 0pt{\hss\showpointer\pointerN\hss}
-            \hbox to 0pt{\llap{\showpointer\pointerW\hskip0.7em}%
-              \raise1pt\hbox to 0pt{\hss$\updownarrow$\hss}%
-              \raise1pt\hbox to 0pt{\hss$\leftrightarrow$\hss}%
-              \rlap{\hskip0.7em\showpointer\pointerE}}
-              \hbox to 0pt{\hss\showpointer\pointerS\hss}
+            \hbox to 0pt{\hss\strut\showpointer\pointerN\hss}
+            \hbox to 0pt{\llap{\showpointer\pointerW\hskip0.8em}%
+              \raise3pt\hbox to 0pt{\hss$\uparrow$\hss}%
+              \raise-1pt\hbox to 0pt{\hss$\downarrow$\hss}%
+              \raise1pt\hbox to 0pt{\hss$\leftarrow\kern-7pt\rightarrow$\hss}%
+              \rlap{\hskip0.8em\showpointer\pointerE}}
+              \hbox to 0pt{\hss\strut\showpointer\pointerS\hss}
           }\qquad\qquad
           \vtop{
             \def\arr{$\uparrow$}
@@ -396,6 +449,7 @@
 \newtoks\colorlegendtitle
 \newif\ifnortharrow
 \newif\ifscalebar
+\newif\ifaltitudebar
 \newtoks\explotitle
 \newtoks\explodate
 \newtoks\exploteam
@@ -423,19 +477,20 @@
 \newtoks\magdecl
 \newtoks\gridconv
 \newtoks\currentdate
-\newtoks\legendtextcolor\legendtextcolor={\color[0 0 0]}
+\newtoks\legendtextcolor\legendtextcolor={\black}
 \newtoks\legendtextsize\legendtextsize={\size[12]}
 \newtoks\legendtextheadersize\legendtextheadersize={\size[26]}
 \newtoks\legendtextsectionsize\legendtextsectionsize={\size[14]}
 
-\def\scalebar{\pdfrefxform\THWscalebar}
-\def\northarrow{\pdfrefxform\THWnortharrow}
+\def\scalebar{\pdfrefxform\getref{THWscalebar}}
+\def\altitudebar{\pdfrefxform\getref{THWaltitudebar}}
+\def\northarrow{\pdfrefxform\getref{THWnortharrow}}
 \newdimen\legendwidth %\legendwidth=14cm
 \newcount\legendcolumns \legendcolumns=2
 
 \legendcontent={%
   \hsize=\legendwidth
-  \color[0 0 0]\the\legendtextcolor 
+  \black\the\legendtextcolor 
   \ifnortharrow\vbox to 0pt{\line{\hfil\northarrow}\vss}\fi
   \edef\tmp{\the\cavename} \ifx\tmp\empty \else
      {\the\legendtextheadersize\the\cavename}\vskip1cm
@@ -466,7 +521,7 @@
     \fi
   }
   \formattedlegend
-  \color[0 0 0]
+  \black
 }
 
 \def\maplayout{
@@ -610,10 +665,29 @@
   \ignorespaces
 }
 
-\def\loadpicture#1{\pdfximage{#1}\pdfrefximage\pdflastximage}
+\newtoks\includeprefix\includeprefix={.}
+\newif\ifabspath
+\def\checkcolon #1:#2\endparam{\def\tmp{#2}\ifx\tmp\empty\else\abspathtrue\fi}
+\def\checkstartslash #1#2\endparam{\if/#1\abspathtrue\fi}
+
+% convert a relative path to absolute and save it under the name #1
+\def\savepath#1#2{\expandafter\edef\csname thABS:#1\endcsname{\the\includeprefix #2}}
+
+\def\loadpicture#1{%
+  \ifcsname thABS:#1\endcsname   % use a saved absolute path if it exists
+    \pdfximage{\csname thABS:#1\endcsname}%
+  \else
+    \abspathfalse
+    \checkcolon #1:\endparam
+    \checkstartslash #1\endparam
+    \pdfximage{\ifabspath\else\the\includeprefix\fi #1}%
+  \fi
+  \pdfrefximage\pdflastximage
+}
+
+\def\inputrel#1{\input \the\includeprefix #1}
 
 \def\insertmaps{%
-  \color[0 0 0]
   \input th_formdef
   \input th_pagedef
   \input th_pages
@@ -711,6 +785,10 @@
       \else \makecolumns{\dimen0} \fi \fi}
 
 %% end of multicolumn macros
+
+\pdfcolorstack 0 set {\ifx\OutputColormodel\modelcmyk 0 0 0 1 k 0 0 0 1 K\else
+           \ifx\OutputColormodel\modelrgb 0 0 0 rg 0 0 0 RG\else
+           0 g 0 G\fi\fi}
 
 \input th_enc
 \input th_texts

@@ -31,12 +31,26 @@
 #include "thmap.h"
 #include "thdatabase.h"
 #include "thdb1d.h"
+#include "th2ddataobject.h"
 #include "thdata.h"
 #include "thinit.h"
+#include "thpoint.h"
+#include "thline.h"
+#include "extern/nlohmann/json.hpp"
 #include "thsurvey.h"
 #include <stdio.h>
+#include <fstream>
+#include <iomanip>
 #include "thchenc.h"
 #include <map>
+#ifndef THMSVC
+#include <dirent.h>
+#include <unistd.h>
+#else
+#include <direct.h>
+#define mkdir _mkdir
+#define S_ISDIR(v) (((v) | _S_IFDIR) != 0)
+#endif
 #include "thinfnan.h"
 
 thexpdb::thexpdb() {
@@ -53,19 +67,19 @@ void thexpdb::parse_options(int & argx, int nargs, char ** args)
     case TT_EXPDB_OPT_FORMAT:  
       argx++;
       if (argx >= nargs)
-        ththrow(("missing format -- \"%s\"",args[optx]))
+        ththrow("missing format -- \"{}\"",args[optx]);
       this->format = thmatch_token(args[argx], thtt_expdb_fmt);
       if (this->format == TT_EXPDB_FMT_UNKNOWN)
-        ththrow(("unknown format -- \"%s\"", args[argx]))
+        ththrow("unknown format -- \"{}\"", args[argx]);
       argx++;
       break;
     case TT_EXPDB_OPT_ENCODING:  
       argx++;
       if (argx >= nargs)
-        ththrow(("missing encoding -- \"%s\"",args[optx]))
+        ththrow("missing encoding -- \"{}\"",args[optx]);
       this->encoding = thmatch_token(args[argx], thtt_encoding);
       if (this->encoding == TT_UNKNOWN_ENCODING)
-        ththrow(("unknown encoding -- \"%s\"", args[argx]))
+        ththrow("unknown encoding -- \"{}\"", args[argx]);
       argx++;
       break;
     default:
@@ -95,6 +109,7 @@ void thexpdb::process_db(class thdatabase * dbp)
 {
   this->db = dbp;
   if (this->format == TT_EXPDB_FMT_UNKNOWN) {
+	  this->format = TT_EXPDB_FMT_QTH;
     thexp_set_ext_fmt(".sql", TT_EXPDB_FMT_SQL)
     thexp_set_ext_fmt(".csv", TT_EXPDB_FMT_CSV)
   }
@@ -105,8 +120,11 @@ void thexpdb::process_db(class thdatabase * dbp)
     case TT_EXPDB_FMT_CSV:
       this->export_csv_file(dbp);
       break;
+    case TT_EXPDB_FMT_QTH:
+      this->export_qth_file(dbp);
+      break;
     default:
-      ththrow(("unknown database format (use .csv or .sql)"))
+      ththrow("unknown database format (use .csv or .sql)");
   }
 }
 
@@ -139,7 +157,8 @@ void thexpdb::export_sql_file(class thdatabase * dbp)
     thwarning(("can't open %s for output",fnm))
     return;
   }
-
+  this->register_output(fnm);
+  
   thdb_object_list_type::iterator oi;
   thdataleg_list::iterator lei;
   thdata_team_set_type::iterator ti;
@@ -249,7 +268,7 @@ void thexpdb::export_sql_file(class thdatabase * dbp)
       switch ((*oi)->get_class_id()) {
 
         case TT_SURVEY_CMD:
-          sp = (thsurvey *)(*oi);
+          sp = (thsurvey *)(*oi).get();
           ENCODESTR(sp->title);
           IF_PRINTING {
             fprintf(sqlf,"insert into SURVEY values "
@@ -265,7 +284,7 @@ void thexpdb::export_sql_file(class thdatabase * dbp)
           break;  // SURVEY
 
 		case TT_SCRAP_CMD:
-			scrapp = (thscrap *)(*oi);
+			scrapp = (thscrap *)(*oi).get();
 			IF_PRINTING {
 				fprintf(sqlf,"insert into SCRAPS values "
 				  "(%ld, %ld, '%s', %d, %.5lf, %.5lf);\n ",
@@ -277,7 +296,7 @@ void thexpdb::export_sql_file(class thdatabase * dbp)
 			break;
 
 		case TT_MAP_CMD:
-			mapp = (thmap *)(*oi);
+			mapp = (thmap *)(*oi).get();
 			mapp->stat.scanmap(mapp);
 			ENCODESTR(mapp->title);
 			IF_PRINTING {
@@ -300,7 +319,7 @@ void thexpdb::export_sql_file(class thdatabase * dbp)
 			break;
           
         case TT_DATA_CMD:
-          dp = (thdata *)(*oi);
+          dp = (thdata *)(*oi).get();
           ENCODESTR(dp->title);
           IF_PRINTING {
             fprintf(sqlf,"insert into CENTRELINE values "
@@ -437,6 +456,7 @@ void thexpdb::export_csv_file(class thdatabase * dbp) {
     thwarning(("can't open %s for output", fnm))
     return;
   }
+  this->register_output(fnm);
 
   thdb_object_list_type::iterator oi;
   thdataleg_list::iterator lei;
@@ -449,7 +469,7 @@ void thexpdb::export_csv_file(class thdatabase * dbp) {
 
   while (oi != dbp->object_list.end()) {
     if ((*oi)->get_class_id() == TT_DATA_CMD) {
-      dp = (thdata *) (*oi);
+      dp = (thdata *) (*oi).get();
 
       for (lei = dp->leg_list.begin(); lei != dp->leg_list.end(); lei++) {
         if (lei->is_valid) {
@@ -466,13 +486,13 @@ void thexpdb::export_csv_file(class thdatabase * dbp) {
 
       // Export equate links between stations 
       int last_equate = 0;
-      long MAX_LEN = 500;
+      const long MAX_LEN = 500;
       char first_name[MAX_LEN];
       if (!dp->equate_list.empty()) {
         fprintf(out, "# Equated stations\n");
         for (eqi = dp->equate_list.begin(); eqi != dp->equate_list.end(); eqi++) {
           if (last_equate != eqi->eqid) {
-            snprintf(first_name, MAX_LEN, "%s@%s", eqi->station.name, eqi->station.survey);
+            std::snprintf(first_name, MAX_LEN, "%s@%s", eqi->station.name, eqi->station.survey);
             last_equate = eqi->eqid;
           } else {
             if (last_equate != 0)
@@ -486,6 +506,133 @@ void thexpdb::export_csv_file(class thdatabase * dbp) {
   }  // while
 
   fclose(out);
+
+#ifdef THDEBUG
+#else
+  thprintf("done\n");
+  thtext_inline = false;
+#endif
+}
+
+void thexpdb::export_qth_scrap(std::string fpath, thscrap * scr) {
+	nlohmann::json drawing;
+	nlohmann::json scrap;
+	scrap["name"] = scr->name;
+	scrap["objects"] = {};
+	th2ddataobject * oo;
+	for(oo = scr->fs2doptr; oo != NULL; oo = oo->nscrapoptr) {
+		nlohmann::json obj;
+		nlohmann::json lpts = {};
+		thpoint * pt;
+		thline * ln;
+		thdb2dlp * lp;
+		switch(oo->get_class_id()) {
+		case TT_LINE_CMD:
+			obj["class"] = "line";
+			ln = (thline *) oo;
+			obj["type"] = thmatch_string(ln->type, thtt_line_types);
+			for(lp = ln->first_point; lp != NULL; lp = lp->nextlp) {
+				nlohmann::json lpt;
+				if (lp->cp1)
+					lpt["cp1"] = {lp->cp1->x, lp->cp1->y};
+				if (lp->cp2)
+					lpt["cp2"] = {lp->cp2->x, lp->cp2->y};
+				lpt["point"] = {lp->point->x, lp->point->y};
+				lpts.push_back(lpt);
+			}
+			obj["points"] = lpts; 
+			break;
+		case TT_POINT_CMD:
+			obj["class"] = "point";
+			pt = (thpoint *) oo;
+			obj["type"] = thmatch_string(pt->type, thtt_point_types);
+			obj["point"] = {pt->point->x, pt->point->y};
+			//obj["position"].push_back(pt->point->x);
+			//obj["position"].push_back(pt->point->y);
+			break;
+		default:
+			continue;
+		}
+		scrap["objects"].push_back(obj);
+	}
+	drawing["scraps"] = {};
+	drawing["scraps"].push_back(scrap);
+    std::ofstream o(fpath + std::string("/d_") + std::string(scr->name) + std::string(".qth"));
+    o << std::setw(4) << drawing << std::endl;
+}
+
+
+
+void thexpdb::export_qth_survey(std::string fpath, thsurvey * srv) {
+	
+	// 1. create fpath folder
+	// 2. for each object:
+	// 3. create index JSON object
+	// 4. traverse all objects
+	// 5. save C_, D_ files, recursively call subsurveys
+	// 6. save index file
+	if (strlen(srv->name) > 0) {
+		fpath += "/";
+		fpath += srv->name;
+	}
+	nlohmann::json index;
+	index["title"] = srv->title;
+#ifdef THWIN32
+    if (mkdir(fpath.c_str()) != 0) {
+#else
+    if (mkdir(fpath.c_str(),0046750) != 0) {
+#endif
+
+      struct 
+#ifdef THMSVC
+      _stat
+#else
+      stat 
+#endif
+      buf;
+#ifdef THMSVC
+      _stat
+#else
+      stat 
+#endif
+      (fpath.c_str(),&buf);
+      if ((errno != EEXIST) || (!S_ISDIR(buf.st_mode))) {
+        therror(("can't create output directory -- %s", fpath.c_str()));
+      }
+    }
+    
+    thdataobject * obj = srv->foptr;
+    while (obj != NULL) {
+    	switch (obj->get_class_id()) {
+    	case TT_SURVEY_CMD:
+    		this->export_qth_survey(fpath, (thsurvey *) obj);
+    		break;
+    	case TT_SCRAP_CMD:
+    		this->export_qth_scrap(fpath, (thscrap *) obj);
+    		break;
+    	}
+        obj = obj->nsptr;
+    }
+    
+    std::ofstream o(fpath + std::string("/index.qth"));
+    o << std::setw(4) << index << std::endl;
+    
+}
+
+
+void thexpdb::export_qth_file(class thdatabase * dbp) {
+
+  const char * fnm = this->get_output("cave");
+
+#ifdef THDEBUG
+  thprintf("\n\nwriting %s\n", fnm);
+#else
+  thprintf("writing %s ... ", fnm);
+  thtext_inline = true;
+#endif
+  
+  this->export_qth_survey(fnm, dbp->fsurveyptr);
+
 
 #ifdef THDEBUG
 #else

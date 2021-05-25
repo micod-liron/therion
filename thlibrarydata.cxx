@@ -16,10 +16,10 @@
 
 void thlibrary_init_grades()
 {
-	thgrade * pgrade;
+	std::unique_ptr<thgrade> pgrade;
 	thbuffer oname;
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "BCRA3";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "BCRA grade 3";
@@ -35,9 +35,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = 0.25;
 	pgrade->dls_y = 0.25;
 	pgrade->dls_z = 0.25;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "BCRA5";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "BCRA grade 5";
@@ -53,9 +53,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = 0.05;
 	pgrade->dls_y = 0.05;
 	pgrade->dls_z = 0.05;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_-1";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 ungraded survey without map";
@@ -71,9 +71,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_0";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 ungraded survey";
@@ -89,9 +89,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_1";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 survey grade 1";
@@ -107,9 +107,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_2";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 survey grade 2";
@@ -125,9 +125,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_3";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 survey grade 3";
@@ -143,9 +143,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_4";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 survey grade 4";
@@ -161,9 +161,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_5";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 survey grade 5";
@@ -179,9 +179,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_6";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 survey grade 6";
@@ -197,9 +197,9 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 
-	pgrade = (thgrade *) thdb.create("grade", thobjectsrc("therion",0));
+	pgrade = thdb.create<thgrade>(thobjectsrc("therion",0));
 	oname = "UISv1_X";
 	pgrade->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,0,0);
 	oname = "UISv1 survey grade X";
@@ -215,15 +215,15 @@ void thlibrary_init_grades()
 	pgrade->dls_x = thnan;
 	pgrade->dls_y = thnan;
 	pgrade->dls_z = thnan;
-	thdb.insert(pgrade);
+	thdb.insert(std::move(pgrade));
 }
 
 void thlibrary_init_layouts()
 {
-	thlayout * playout;
+	std::unique_ptr<thlayout> playout;
 	thbuffer oname;
 
-	playout = (thlayout *) thdb.create("layout", thobjectsrc("therion",0));
+	playout = thdb.create<thlayout>(thobjectsrc("therion",0));
 	oname = "AUT";
 	playout->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,TT_UTF_8,0);
 	oname = "Austrian symbol set";
@@ -302,6 +302,10 @@ void thlibrary_init_layouts()
 	playout->explo_lens = 2;
 	playout->def_topo_lens = 0;
 	playout->topo_lens = 2;
+	playout->def_carto_lens = 0;
+	playout->carto_lens = 2;
+	playout->def_copy_lens = 0;
+	playout->copy_lens = 2;
 	playout->def_lang = 0;
 	playout->lang = THLANG_EN;
 	playout->def_units = 0;
@@ -381,9 +385,9 @@ void thlibrary_init_layouts()
 	playout->last_line->smid = SYMX_ICE;
 	playout->last_line->sclr = thlayout_color(0.000000,0.680000,0.940000);
 	playout->def_tex_lines = 2;
-	thdb.insert(playout);
+	thdb.insert(std::move(playout));
 
-	playout = (thlayout *) thdb.create("layout", thobjectsrc("therion",0));
+	playout = thdb.create<thlayout>(thobjectsrc("therion",0));
 	oname = "SCR200";
 	playout->set(thcmd_option_desc(TT_DATAOBJECT_NAME,1),oname,TT_UTF_8,0);
 	oname = "Computer screen layout";
@@ -462,6 +466,10 @@ void thlibrary_init_layouts()
 	playout->explo_lens = 2;
 	playout->def_topo_lens = 0;
 	playout->topo_lens = 2;
+	playout->def_carto_lens = 0;
+	playout->carto_lens = 2;
+	playout->def_copy_lens = 0;
+	playout->copy_lens = 2;
 	playout->def_lang = 0;
 	playout->lang = THLANG_EN;
 	playout->def_units = 0;
@@ -524,6 +532,6 @@ void thlibrary_init_layouts()
 	oname = "SKBB";
 	playout->set(thcmd_option_desc(TT_LAYOUT_SYMBOL_DEFAULTS,1),oname,TT_UTF_8,0);
 	playout->def_tex_lines = 2;
-	thdb.insert(playout);
+	thdb.insert(std::move(playout));
 }
 

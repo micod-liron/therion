@@ -61,7 +61,7 @@ class thtfangle : public thtf {
 
   public:
 	
-	bool allow_percentage;
+	bool allow_percentage = false;
   
   /**
    * Parse units factor.
@@ -69,9 +69,9 @@ class thtfangle : public thtf {
    
   thtfangle();
    
-  virtual void parse_units(char * ustr);
+  void parse_units(char * ustr) override;
   
-  virtual double transform(double value);
+  double transform(double value) override;
   
 };
 

@@ -41,17 +41,10 @@ tharea::tharea()
   this->m_outline_line = NULL;
 }
 
-
-tharea::~tharea()
-{
-  delete this->m_outline_line;
-}
-
-
 void tharea::start_insert() {
   if (this->type == TT_AREA_TYPE_U) {
     if (this->m_subtype_str == NULL)
-      ththrow(("missing subtype specification for area of user defined type"))
+      ththrow("missing subtype specification for area of user defined type");
     this->db->db2d.register_u_symbol(this->get_class_id(), this->m_subtype_str);
   }
 }
@@ -132,9 +125,9 @@ void tharea::parse_type(char * tstr)
 {
   this->type = thmatch_token(tstr, thtt_area_types);
   if (this->type == TT_AREA_TYPE_UNKNOWN)
-    ththrow(("unknown area type -- %s", tstr))
+    ththrow("unknown area type -- {}", tstr);
   if (this->type == TT_AREA_TYPE_DIMENSIONS)
-    ththrow(("area dimensions is not supported as ordinary type"))
+    ththrow("area dimensions is not supported as ordinary type");
 }
 
 
@@ -142,18 +135,12 @@ void tharea::parse_type(char * tstr)
 void tharea::parse_subtype(char * ststr)
 {
   if (this->type == TT_AREA_TYPE_UNKNOWN)
-    ththrow(("area type must be specified before subtype"))
+    ththrow("area type must be specified before subtype");
   if (this->type == TT_AREA_TYPE_U) {
     this->parse_u_subtype(ststr);
     return;
   } else
-    ththrow(("invalid type - subtype combination"))
-}
-
-
-void tharea::self_delete()
-{
-  delete this;
+    ththrow("invalid type - subtype combination");
 }
 
 void tharea::self_print_properties(FILE * outf)
@@ -178,7 +165,7 @@ void tharea::insert_border_line(int npars, char ** pars)
 {
   thdb2dab * bl;
   if (npars != 1)
-    ththrow(("one line name per line allowed"))
+    ththrow("one line name per line allowed");
   bl = this->db->db2d.insert_border_line();
   bl->source = this->db->csrc;
   thparse_objectname(bl->name,& this->db->buff_stations,*pars);
@@ -202,6 +189,9 @@ bool tharea::export_mp(class thexpmapmpxs * out)
   macroid = mid; \
   break;
   switch (this->type) {
+    case TT_AREA_TYPE_U:
+    	macroid = this->db->db2d.register_u_symbol(TT_AREA_CMD, this->m_subtype_str);
+    	break;
     tharea_type_export_mp(TT_AREA_TYPE_SAND, SYMA_SAND)
     tharea_type_export_mp(TT_AREA_TYPE_DEBRIS, SYMA_DEBRIS)
     tharea_type_export_mp(TT_AREA_TYPE_SUMP, SYMA_SUMP)
@@ -214,7 +204,6 @@ bool tharea::export_mp(class thexpmapmpxs * out)
     tharea_type_export_mp(TT_AREA_TYPE_BEDROCK, SYMA_BEDROCK)
     tharea_type_export_mp(TT_AREA_TYPE_FLOWSTONE, SYMA_FLOWSTONE)
     tharea_type_export_mp(TT_AREA_TYPE_MOONMILK, SYMA_MOONMILK)
-    tharea_type_export_mp(TT_AREA_TYPE_U, SYMA_U)
     tharea_type_export_mp(TT_AREA_TYPE_MUDCRACK, SYMA_MUDCRACK)
     tharea_type_export_mp(TT_AREA_TYPE_PILLAR, SYMA_PILLAR)
     tharea_type_export_mp(TT_AREA_TYPE_PILLARWITHCURTAINS, SYMA_PILLARWITHCURTAINS)
@@ -247,8 +236,9 @@ bool tharea::export_mp(class thexpmapmpxs * out)
   }
 
   if (this->type == TT_AREA_TYPE_U) {
-    out->symset->export_mp_symbol_options(out->file, -1);
+    out->symset->export_mp_symbol_options(out->file, omacroid);
     fprintf(out->file,"a_u_%s(buildcycle(",this->m_subtype_str);
+    out->symset->usymbols[omacroid].m_used = true;
     this->db->db2d.use_u_symbol(this->get_class_id(), this->m_subtype_str);
   } else {
     out->symset->export_mp_symbol_options(out->file, omacroid);
