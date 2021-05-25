@@ -5,6 +5,7 @@ de: Modell
 en: Model
 es: Modelo
 fr: Modèle
+it: Modello
 pt: Modelo
 rs: Model
 ru: Модель
@@ -18,6 +19,7 @@ de: Karte
 en: Map
 es: Mapa
 fr: Carte
+it: Mappa
 pt: Mapa
 rs: Nacrt
 ru: Карта
@@ -30,9 +32,10 @@ ca: Visual de superficie
 de: Oberflächenmesszug
 en: Surface legs
 es: Visual de superficie
-fr: Visée de surface
+fr: Visées de surface
+it: Misure di superficie
 pt: Visadas na superfície
-rs: površinski vlak
+rs: Površinski vlak
 ru: Поверхностная съёмка
 sk: povrchové zámery
 sl: Površinske vizure
@@ -66,7 +69,7 @@ el: προσωρινό σημείο χαρτογράφησης
 en: temporary survey station
 es: estación (temporal)
 fr: station topo temporaire
-it: caposaldo termporaneo
+it: caposaldo temporaneo
 mi: kaimataara mo te wā
 pl: punkt pomiarowy (niezastabilizowany)
 pt: base temporária
@@ -85,12 +88,12 @@ de: farbig markierter Messpunkt
 el: σημείο χαρτογράφησης (βαμμένο)
 en: painted survey station
 es: estación (pintada)
-fr: station topo, peinte
+fr: station topo peinte
 it: caposaldo verniciato
 mi: kaimataara tohi
 pl: punkt pomiarowy (oznaczony farbą)
 pt: base pintada
-rs: merna tačka označena bojom
+rs: obeležena merna tačka
 ru: нарисованный пикет
 sk: meračský bod (zafarbený)
 sl: merilna točka (označena)
@@ -105,7 +108,7 @@ de: natürlicher Messpunkt
 el: σημείο χαρτογράφησης (φυσικό)
 en: natural survey station
 es: estación (natural)
-fr: station topo, naturelle
+fr: station topo naturelle
 it: caposaldo naturale
 mi: kaimataara a papa
 pl: punkt pomiarowy naturalny
@@ -125,7 +128,7 @@ de: dauerhafter Messpunkt
 el: μόνιμο σημείο χαρτογράφησης
 en: fixed survey station
 es: estación (fija)
-fr: station topo, fixe
+fr: station topo pointée
 it: caposaldo fisso
 mi: kaimataara whakakōhatu
 pl: punkt pomiarowy (zastabilizowany)
@@ -166,7 +169,7 @@ el: καταβόθρα
 en: sink
 es: sumidero
 fr: perte
-it: perdita
+it: inghiottitoio
 mi: tapoko
 pl: ponor
 pt: sumidouro
@@ -224,7 +227,7 @@ it: disostruzione
 mi: kari
 pl: wykop
 pt: desobstrução
-rs: kopano
+rs: prokop
 ru: раскоп
 sk: sonda
 sl: izkop
@@ -274,12 +277,13 @@ therion: point flag:arch
 bg: арка
 ca: arc
 cs: skalní oblouk
-en: arch
 de: Bogen
+en: arch
 es: arco
 fr: arche
+it: arco
 pt: arco
-rs: kameni luk
+rs: prerast
 ru: арка
 sk: skalný oblúk
 sl: skalni obok
@@ -336,7 +340,7 @@ el: όνομα σημείου χαρτογράφησης
 en: survey station name
 es: nombre de la estación
 fr: station topo, nom
-it: node del caposaldo
+it: nome del caposaldo
 mi: kaimatara ingoa
 pl: numer punktu pomiarowego
 pt: nome de base
@@ -375,7 +379,7 @@ de: zusammenhängende Pläne
 el: ένωση χαρτών
 en: map connection
 es: conexión entre mapas
-fr: jonction de carte
+fr: raccord de carte
 it: riporto di mappa
 mi: mahere whenua ki te hui
 pl: połączenie map
@@ -395,7 +399,7 @@ de: Wand
 el: τοίχος
 en: wall
 es: pared
-fr: mur
+fr: paroi
 it: parete
 mi: tarā
 pl: ściana
@@ -415,12 +419,12 @@ de: Wand zum Deckgebirge
 el: τοίχος
 en: wall
 es: pared  de roca
-fr: mur
+fr: paroi rocheuse
 it: roccia
 mi: tarā
 pl: ściana
 pt: parede (rocha matriz)
-rs: matična stena
+rs: zid
 ru: стена (коренная)
 sk: stena
 sl: kamnita stena
@@ -435,8 +439,8 @@ de: Wand unterlagernder Gang
 el: υποκείμενος τοίχος
 en: underlying wall
 es: pared galeria inferior
-fr: mur sousjacent
-it: parete:sottostante
+fr: paroi inférieure
+it: parete sottostante
 mi: tāra ki raro
 pl: ściana położona niżej
 pt: parede (conduto inferior)
@@ -454,8 +458,8 @@ cs: stěna vyšší úrovně
 de: überlagerter Wandverlauf
 en: overlying wall
 es: pared galeria superior
-fr: mur susjacent
-it: parete:sovrastante
+fr: paroi supérieure
+it: parete sovrastante
 mi: tāra ki runga
 pl: ściana położona wyżej
 pt: parede (conduto superior)
@@ -473,8 +477,8 @@ de: Wand unvermessen
 el: τοίχος (μη χαρτογραφημένος)
 en: unsurveyed wall
 es: pared no topografiada
-fr: mur non topographié
-it: parete:stimata
+fr: paroi non topographiée
+it: parete stimata
 mi: ka rūri tāra
 pl: ściana nie pomierzona
 pt: parede não-topografada
@@ -493,8 +497,8 @@ de: Wand geschätzt
 el: τοίχος υποθετικός
 en: presumed wall
 es: pared supuesta
-fr: mur supposé
-it: parete:presunta
+fr: paroi présumée
+it: parete presunta
 mi: tāra whakaaro
 pl: niewidoczna ściana
 pt: parede presumida
@@ -514,12 +518,12 @@ en: entrance pit
 en_GB: entrance pitch
 en_US: entrance pit
 es: pozo de entrada
-fr: mur-puits
-it: parete:pozzo
+fr: puits d'entrée
+it: pozzo di ingresso
 mi: rua
 pl: studnia wstępna
 pt: parede (poço)
-rs: odsek
+rs: jamski ulaz
 ru: отвес
 sk: vstupná priepasť
 sl: brezno
@@ -533,8 +537,8 @@ de: Wand aus Versturz
 el: ογκόλιθοι
 en: blocks, breakdown
 es: pared de bloques
-fr: effrondrement
-it: massi
+fr: blocs, effrondrement
+it: massi, crollo
 mi: pakaru
 pl: ściana utworzona przez zawalisko
 pt: parede de blocos
@@ -553,7 +557,7 @@ de: Wand aus Schutt
 el: χαλάσματα
 en: debris
 es: pared de derrubios
-fr: débris de roche
+fr: cailloutis, éboulis
 it: detriti
 mi: otaota
 pl: ściana utworzona przez żwir
@@ -573,8 +577,8 @@ de: Wand aus Kies
 el: χαλίκια
 en: pebbles
 es: pared de cantos rodados
-fr: cailloux
-it: ciotoli
+fr: galets
+it: ciottoli
 mi: nga kōhatu iti
 pl: ściana utworzona przez okręglaki
 pt: parede de seixos
@@ -618,7 +622,7 @@ it: argilla
 mi: oneuku
 pl: ściana z gliny
 pt: parede de lama/argila
-rs: blato, glina
+rs: glina
 ru: глина
 sk: stena tvorená ílom
 sl: glina
@@ -652,11 +656,12 @@ cs: stěna tvořená sintrem
 de: Wand aus Sinter
 en: flowstone wall
 es: pared de colada
+fr: paroi calcitée
 it: colata
 mi: tāra a pari kōhatu
 pl: ściana z nacieków
 pt: parede de escorrimento
-rs: saliv
+rs: salivni zid
 ru: натеки
 sk: stena tvorená sintrom
 sl: siga
@@ -669,8 +674,8 @@ cs: stěna tvořená měkkým sintrem
 de: Wand aus Bergmilch
 en: moonmilk wall
 es: pared de mondmilch
-fr: mur de mondmilch
-it: moonmilk
+fr: paroi de mondmilch
+it: parete di latte di monte
 mi: tāra a mirika marama
 pl: ściana z miękkich nacieków
 pt: parede de leite de lua
@@ -769,7 +774,7 @@ de: Raumhöhe
 el: ύψος στοάς
 en: passage height
 es: altura galería
-fr: hauteur du passage
+fr: hauteur de galerie
 it: altezza galleria
 mi: ara teitei
 pl: wysokość korytarza
@@ -789,7 +794,7 @@ de: Raumhöhe
 el: ύψος στοάς
 en: passage height
 es: altura galería
-fr: hauteur du passage
+fr: hauteur de galerie
 it: altezza galleria
 mi: ara teitei
 pl: wysokość korytarza
@@ -809,12 +814,12 @@ de: Raumhöhe nach oben
 el: ύψος στοάς πάνω από νερό
 en: height above water level
 es: altura sobre nivel del agua
-fr: hauteur au-dessus de l’eau
+fr: hauteur au-dessus du niveau de l’eau
 it: altezza sopra il livello dell'acqua
 mi: te teitei a karewa ki runga
 pl: wysokość korytarza nad powierzchnią wody
 pt: altura acima do nível da água
-rs: visina tavanice
+rs: visina iznad nivoa vode
 ru: высота над уровнем воды
 sk: výška nad hladinou
 sl: višina prehoda nad gladino
@@ -829,12 +834,12 @@ de: Raumhöhe nach unten
 el: βάθος στοάς κάτω από νερό
 en: depth below water level
 es: profundidad bajo nivel del agua
-fr: hauteur en dessous de l’eau
+fr: profondeur sous le niveau de l’eau
 it: profondità sotto il livello dell'acqua
 mi: te hōhunu a karewa ki raro
 pl: wysokość korytarza pod powierzchnią wody
 pt: profundidade abaixo do nível da água
-rs: dubina kanala
+rs: dubina vode
 ru: глубина ниже уровня воды
 sk: hĺbka pod hladinou
 sl: globina prehoda pod gladino
@@ -849,12 +854,12 @@ de: Raumhöhe gesamt
 el: ύψος και βάθος στοάς πάνω και κάτω από νερό
 en: height above, depth below water
 es: altura y profundidad respecto nivel del agua
-fr: hauteur au dessous et au dessus de l’eau
+fr: hauteur au-dessus, profondeur sous le niveau de l'eau
 it: altezza sopra e sotto il livello dell'acqua
 mi: karewa ki runga ki raro
 pl: wysokość korytarza nad powierzchnią wody i głębokość poniżej poziomu wody
 pt: altura acima mais profundidade abaixo do nível da água
-rs: ukupna visina kanala
+rs: visina i dubina od površine vode
 ru: высота над и глубина ниже уровня воды
 sk: výška nad a hĺbka pod hladinou
 sl: višina prehoda pod in nad gladino
@@ -889,8 +894,8 @@ de: Luftzug im Winter
 el: χειμερινή ροή αέρα
 en: winter air draught
 es: corriente de aire invierno
-fr: courant d’air d’hiver
-it: circolazione invernale
+fr: courant d’air en hiver
+it: corrente d'aria invernale
 mi: tawhiri a takurua
 pl: przewiew w zimie
 pt: corrente de ar (inverno)
@@ -909,8 +914,8 @@ de: Luftzug im Sommer
 el: θερινή ροή αέρα
 en: summer air draught
 es: corriente de aire verano
-fr: courant d’air d’été
-it: circolazione estiva
+fr: courant d’air en été
+it: corrente d'aria estiva
 mi: tawhiri a raumati
 pl: przewiew w lecie
 pt: corrente de ar (verão)
@@ -929,12 +934,12 @@ de: Datum
 el: ημερομηνία
 en: date of observation
 es: fecha
-fr: date
+fr: date d'observation
 it: data d'osservazione
 mi: rā o te titiro
 pl: data obserwacji
 pt: data do registro
-rs: datum
+rs: datum opažanja
 ru: дата наблюдения
 sk: dátum pozorovania
 sl: datum opazovanja
@@ -988,8 +993,8 @@ de: Engstelle, zu schmal
 el: κλείσιμο στοάς λόγω στενώματος
 en: passage end, narrow
 es: final estrecho
-fr: passage impénétrable
-it: chiude su strettoia
+fr: arrêt sur étroiture
+it: strettoia finale
 mi: putanga kuiti mutunga
 pl: zwężenie nie do przejścia
 pt: passagem (final estreito)
@@ -1008,8 +1013,8 @@ de: Engstelle, zu flach
 el: κλείσιμο στοάς λόγω χαμηλής οροφής
 en: passage end, low
 es: final laminador
-fr: passage bas
-it: chiude su laminatoio
+fr: arrêt sur laminoir
+it: laminatoio finale
 mi: putanga pāpaku mutunga
 pl: obniżenie nie do przejścia
 pt: passagem (final teto baixo)
@@ -1028,8 +1033,8 @@ de: Fortsetzung zugesintert
 el: κλείσιμο στοάς λόγο σταλαγμιτικού αποθέματος
 en: flowstone choke
 es: colmatado por concreción
-fr: trémie calcifiée
-it: chiude su colata
+fr: arrêt sur coulée de calcite
+it: concrezioni terminali
 mi: nati pari kōhatu
 pl: koniec zamknięty naciekami
 pt: obstrução por escorrimento
@@ -1048,8 +1053,8 @@ de: Fortsetzung verstürzt
 el: κλείσιμο στοάς λόγο χαλάσματος
 en: breakdown choke
 es: colmatado por derrumbe
-fr: trémie
-it: chiude su frana
+fr: arrêt sur trémie
+it: frana terminale
 mi: nati pakaru
 pl: koniec zawalony
 pt: obstrução por desmoronamento
@@ -1067,8 +1072,8 @@ cs: konec uzavřený jílem
 de: Fortsetzung verlehmt
 en: clay choke
 es: colmatado por arcilla
-fr: colmaté par de l'argille
-it: chiude su riempimento
+fr: bouchon d'argile
+it: riempimento terminale
 mi: uku pari
 pl: koniec zamknięty gliną
 pt: obstrução por lama/argila
@@ -1086,7 +1091,7 @@ de: Bodenstufe
 el: σκαλοπάτι
 en: floor step
 es: resalte
-fr: marche
+fr: escarpement
 it: gradino
 mi: tapuae
 pl: próg
@@ -1127,12 +1132,12 @@ de: Bodenmäander
 el: μαίανδρος δαπέδου
 en: floor meander
 es: meandro en suelo
-fr: méandre au sol
-it: meandro
+fr: méandre
+it: meandro a pavimento
 mi: kopiko
 pl: meander w dnie
 pt: meandro no piso
-rs: meandar u podu
+rs: podni meandar
 ru: меандр, канал в полу
 sk: meander v dne
 sl: dno meandra
@@ -1154,7 +1159,7 @@ it: pozzo
 mi: tupari
 pl: studnia
 pt: poço
-rs: odsek
+rs: ulaz u vertikalu
 ru: колодец
 sk: priepasť
 sl: brezno
@@ -1169,7 +1174,7 @@ de: Deckenstufe
 el: σκαλοπάτι οροφής
 en: ceiling step
 es: resalte techo
-fr: marche de plafond
+fr: escarpement en voûte
 it: gradino a soffitto
 mi: tapuae ki te tuanui
 pl: zmiana wysokości stropu
@@ -1190,7 +1195,7 @@ de: Deckenmäander
 el: μαίανδρος οροφής
 en: ceiling meander
 es: meandro techo
-fr: méandre de plafond
+fr: méandre de voûte
 it: canale di volta
 mi: kopiko tuanui
 pl: meander w stropie
@@ -1236,7 +1241,7 @@ it: scivolo
 mi: heke
 pl: nachylenie korytarza
 pt: declividade da galeria
-rs: nagib
+rs: nagib kanala
 ru: уклон хода
 sk: sklon chodby
 sl: strmina
@@ -1252,11 +1257,11 @@ el: κλίση στοάς
 en: passage gradient
 es: pendiente
 fr: pente
-it: scivolo
+it: pendenza
 mi: harapaki putanga
 pl: nachylenie korytarza
 pt: declividade da galeria
-rs: nagib
+rs: nagib kanala
 ru: уклон хода
 sk: sklon chodby
 sl: strmina
@@ -1272,12 +1277,12 @@ el: ύψος σκαλοπατιού/καμινάδας ή βάθος πηγαδ�
 en: pit/chimney/step depth/height
 en_GB: pitch/chimney/step depth/height
 es: profundidad/altura pozo/resalte/chimenea
-fr: hauteur d’une marche/d’une cheminée/profondeur
-it: altezza
+fr: hauteur d’un puits/d'un ressaut/d’une cheminée
+it: altezza/profondità pozzo/camino/scalino
 mi: papa tapuae/tumera/teitei rua/hōhonu
 pl: wysokość progu/komina/głębokość studni
 pt: altura do chão para degrau/chaminé/desnível
-rs: visina
+rs: visinska razlika
 ru: высота уступа/камина/колодца
 sk: hĺbka/výška priepasti/stupňa/komína
 sl: višina
@@ -1292,8 +1297,8 @@ de: Ausdehnung
 el: διαστάσεις
 en: dimensions
 es: dimensiones
-fr: proportions
-it: dimensione
+fr: dimensions
+it: dimensioni
 mi: rahinga, meiha
 pl: rozmiary
 pt: dimensões
@@ -1312,12 +1317,12 @@ de: Höhe der Bodenstufe
 el: ύψος σκαλοπατιού
 en: floor step height
 es: altura resalte
-fr: hauteur d’une marche
-it: altezza camino
+fr: hauteur d'un ressaut
+it: altezza scalino
 mi: teitei papa tapuae
 pl: wysokość progu
 pt: altura do degrau no chão (valor absoluto)
-rs: visina
+rs: visina stepenika
 ru: высота уступа
 sk: výška stupňa
 sl: višina stopnje
@@ -1337,7 +1342,7 @@ it: altezza camino
 mi: teitei tumera
 pl: wysokość komina
 pt: altura da chaminé
-rs: visina tavanice
+rs: visina odžaka
 ru: высота трубы
 sk: výška komína
 sl: višina kamina
@@ -1354,11 +1359,11 @@ en: pit depth
 en_GB: pitch depth
 es: profundidad pozo
 fr: profondeur d'un puits
-it: prodondità pozzo
+it: profondità pozzo
 mi: rua hōhonu
 pl: głębokosc studni
 pt: profundidade do poço
-rs: dubina
+rs: dubina vertikale
 ru: глубина колодца
 sk: hĺbka priepasti
 sl: globina brezna
@@ -1373,14 +1378,14 @@ de: Höhenlinie
 el: ισοϋψής
 en: contour
 es: curva de nivel
-fr: contour
+fr: courbe de niveau
 it: contorno
 mi: koru
 pl: poziomica
 pt: contorno
 pt_BR: curva de nível
 pt_PT: contorno
-rs: izolinija
+rs: izohipsa
 ru: контур
 sk: vrstevnica
 sl: prekinjena
@@ -1395,7 +1400,7 @@ de: Hangform
 el: κλίση
 en: slope
 es: pendiente
-fr: pente
+fr: talus
 it: scivolo
 mi: tupari
 pl: pochyła powierzchnia
@@ -1417,7 +1422,7 @@ de: Umriss eines Felsens
 el: περίγραμμα βράχου
 en: rock border
 es: bloque (contorno)
-fr: bord d’un rocher
+fr: bordure d’un bloc
 it: bordo masso
 mi: rohe kōhatu
 pl: obrys kamienia
@@ -1437,7 +1442,7 @@ de: Struktur eines Felsens
 el: άκρη βράχου
 en: rock edges
 es: bloque (arista)
-fr: arête d’un rocher
+fr: arête d'un bloc
 it: spigolo masso
 mi: mata kohatu
 pl: krawędzie kamienia
@@ -1457,8 +1462,8 @@ de: Deckgebirge
 el: πέτρωμα
 en: bedrock
 es: roca madre
-fr: roche
-it: roccia
+fr: roche-mère
+it: sostrato roccioso
 mi: koiwi a papa
 pl: lita skała
 pt: rocha matriz
@@ -1497,7 +1502,7 @@ de: Schutt
 el: χαλάσματα
 en: debris
 es: derrubios
-fr: débris
+fr: cailloutis
 it: detriti
 mi: otaota
 pl: żwir
@@ -1542,7 +1547,7 @@ it: argilla
 mi: oneuku
 pl: glina
 pt: lama/argila
-rs: blato, glina
+rs: glina
 ru: глина
 sk: íl
 sl: glina
@@ -1552,7 +1557,10 @@ zh_CN: 粘土
 therion: point mudcrack
 de: Trockenriss
 en: mudcrack
+fr: fente de dessiccation
+it: fessura di disseccamento
 pt: lama rachada
+rs: ispucalo blato
 sk: popraskané blato
 
 therion: point water
@@ -1624,7 +1632,7 @@ el: χαλίκια
 en: pebbles
 es: cantos rodados
 fr: galets
-it: ciotoli
+it: ciottoli
 mi: nga kōhatu iti
 pl: okręglaki
 pt: seixos
@@ -1682,7 +1690,7 @@ de: Lehmbäumchen
 en: clay tree
 es: abetos arcilla
 fr: sapins d'argile
-it: pini d'argilla
+it: piramidi di argilla
 mi: rakau oneuku
 pt: cones de lama/argila
 rs: glinene kupe
@@ -1699,7 +1707,7 @@ de: Begrenzung
 el: άκρη
 en: border
 es: límite
-fr: bord
+fr: bordure
 it: bordo
 mi: rohe
 pl: granica
@@ -1719,7 +1727,7 @@ de: sichtbare Begrenzung
 el: άκρη
 en: border
 es: límite
-fr: bord
+fr: bordure
 it: bordo
 mi: rohe
 pl: granica
@@ -1739,7 +1747,7 @@ de: vorübergehende Begrenzung
 el: προσωρινή άκρη
 en: temporary border
 es: límite temporal
-fr: bord, temporaire
+fr: bordure temporaire
 it: bordo temporaneo
 mi: rohe mo te wā
 pl: tymczasowa granica
@@ -1759,7 +1767,7 @@ de: geschätzte Begrenzung
 el: υποθετική άκρη
 en: presumed border
 es: límite supuesto
-fr: bord, supposé
+fr: bordure présumée
 it: bordo presunto
 mi: rohe whakaaringa whakaaro
 pl: niewidoczna granica
@@ -1884,7 +1892,7 @@ it: argilla
 mi: oneuku
 pl: glina
 pt: lama/argila
-rs: blato, glina
+rs: glina
 ru: глина
 sk: íl
 sl: glina
@@ -1899,8 +1907,8 @@ de: Kiesfläche
 el: χαλίκια
 en: pebbles
 es: cantos rodados
-fr: galets/pierres
-it: ciotoli
+fr: galets
+it: ciottoli
 mi: nga kōhatu iti
 pl: okręglaki
 pt: seixos
@@ -1919,7 +1927,7 @@ de: Schuttfläche
 el: χαλάσματα
 en: debris
 es: derrubios
-fr: débris
+fr: cailloutis
 it: detriti
 mi: otaota
 pl: żwir
@@ -1939,7 +1947,7 @@ de: flächiger Sinter
 el: σταλαγμιτικό υλικό δαπέδου
 en: flowstone
 es: colada
-fr: concrétion
+fr: coulée de calcite
 it: concrezione
 pt: escorrimento
 rs: salivi
@@ -1958,7 +1966,7 @@ el: γάλα σπηλαίου
 en: moonmilk
 es: mondmilch
 fr: mondmilch
-it: moonmilk
+it: latte di monte
 pt: leite de lua
 rs: pećinsko mleko
 ru: лунное молоко
@@ -1970,7 +1978,10 @@ zh_CN: 月奶石区
 therion: area mudcrack
 de: Trockenrisse
 en: mudcrack
+fr: fentes de dessiccation
+it: fessura di disseccamento
 pt: lama rachada
+rs: ispucalo blato
 
 therion: area pillar
 bg: сталактон
@@ -1985,6 +1996,7 @@ it: colonna
 mi: pou
 pl: stalagnat
 pt: coluna
+rs: stub
 ru: колонна
 sk: stalagnát
 sl: steber
@@ -1994,7 +2006,10 @@ zh_CN: 石柱
 therion: area pillar-with-curtains
 de: Säule mit Vorhängen
 en: pillar with curtains
+fr: pillier avec draperies
+it: colonna con vele
 pt: coluna com cortinas
+rs: stub od draperije
 
 therion: area stalactite
 bg: сталактит
@@ -2009,6 +2024,7 @@ it: stalattite
 mi: kōhatu ki te haere ki runga
 pl: stalaktyt
 pt: estalactite
+rs: stalaktit
 ru: сталактит
 sk: stalaktit
 sl: stalaktit
@@ -2018,7 +2034,10 @@ zh_CN: 石钟乳
 therion: area stalactite-stalagmite
 de: Stalaktit-Stalagmit
 en: stalactite-stalagmite
+fr: stalactite-stalagmite
+it: stalattite-stalagmite
 pt: estalactite-estalagmite
+rs: stalaktit-stalagmit
 
 therion: area stalagmite
 bg: сталагмит
@@ -2033,6 +2052,7 @@ it: stalagmite
 mi: kōhatu ki te haere ki raro
 pl: stalagmit
 pt: estalagmite
+rs: stalagmit
 ru: сталагмит
 sk: stalagmit
 sl: stalagmit
@@ -2067,8 +2087,8 @@ de: Deckgebirge
 el: πέτρωμα
 en: bedrock
 es: roca madre
-fr: roche
-it: roccia
+fr: roche-mère
+it: sostrato roccioso
 pt: rocha matriz
 rs: matična stena
 ru: коренная порода
@@ -2085,7 +2105,7 @@ de: Gerinne
 el: υδρορροή
 en: water flow
 es: curso agua
-fr: rivière
+fr: écoulement
 it: corso d'acqua
 mi: wairere
 pl: ciek wodny
@@ -2105,7 +2125,7 @@ de: Gerinne
 el: υδρορροή
 en: water flow
 es: curso agua
-fr: rivière
+fr: écoulement
 it: corso d'acqua
 mi: wairere
 pl: ciek wodny
@@ -2125,7 +2145,7 @@ de: ständiges Gerinne
 el: μόνιμη υδρορροή
 en: water flow
 es: curso agua permanente
-fr: rivière, permanente
+fr: écoulement permanent
 it: corso d'acqua permanente
 mi: wairere
 pl: ciek wodny
@@ -2145,7 +2165,7 @@ de: ständiges Gerinne
 el: μόνιμη υδρορροή
 en: water flow
 es: curso agua permanente
-fr: rivière, permanente
+fr: écoulement permanent
 it: corso d'acqua permanente
 mi: wairere
 pl: ciek wodny
@@ -2165,7 +2185,7 @@ de: zeitweises Gerinne
 el: διακοπτόμενη υδρορροή
 en: intermittent water flow
 es: curso agua temporal
-fr: rivière, intermittente
+fr: écoulement intermittent
 it: corso d'acqua temporaneo
 mi: wairere taumutumutu
 pl: okresowy ciek wodny
@@ -2185,7 +2205,7 @@ de: zeitweises Gerinne
 el: διακοπτόμενη υδρορροή
 en: intermittent water flow
 es: curso agua temporal
-fr: rivière, intermittente
+fr: écoulement intermittent
 it: corso d'acqua temporaneo
 mi: wairere taumutumutu
 pl: okresowy ciek wodny
@@ -2205,7 +2225,7 @@ de: vermutetes Gerinne
 el: υποτιθέμενη υδρορροή
 en: conjectural water flow
 es: curso agua supuesto
-fr: rivière, conjoncturelle
+fr: écoulement conjoncturel
 it: corso d'acqua presunto
 mi: wairere a pātai
 pl: przewidywany ciek wodny
@@ -2225,8 +2245,8 @@ de: ehemaliges Gerinne
 el: παλαιουδρορροή
 en: paleo water flow (scallops)
 es: paleocurso agua
-fr: rivière fossile
-it: paleocorso d'acqua
+fr: écoulement fossile
+it: paleocorso d'acqua (scallops)
 mi: wairere nehera
 pl: stary ciek wodny
 pt: paleo-fluxo de água
@@ -2266,7 +2286,7 @@ el: καταβόθρα
 en: sink
 es: sumidero
 fr: perte
-it: perdita
+it: inghiottitoio
 mi: tapoko
 pl: ponor
 pt: sumidouro
@@ -2285,7 +2305,7 @@ de: flächiger Sinter
 el: σταλαγμιτικό υλικό δαπέδου
 en: flowstone
 es: colada
-fr: concrétions
+fr: coulée de calcite
 it: concrezione
 mi: pari kōhatu
 pl: nacieki
@@ -2305,7 +2325,7 @@ de: flächiger Sinter
 el: σταλαγμιτικό υλικό δαπέδου
 en: flowstone
 es: colada
-fr: concrétion
+fr: coulée de calcite
 it: concrezione
 mi: pari kōhatu
 pl: nacieki
@@ -2326,7 +2346,7 @@ el: γάλα σπηλαίου
 en: moonmilk
 es: mondmilch
 fr: mondmilch
-it: moonmilk
+it: latte di monte
 mi: mirika marama
 pl: miękkie nacieki
 pt: leite de lua
@@ -2345,7 +2365,7 @@ de: Bergmilch
 el: γάλα σπηλαίου
 en: moonmilk
 fr: mondmilch
-it: moonmilk
+it: latte di monte
 mi: mirika marama
 pl: miękkie nacieki
 pt: leite de lua
@@ -2384,6 +2404,7 @@ de: Stalaktiten
 en: stalactites
 es: estalactitas
 fr: stalactites
+it: stalattiti
 pt: estalactites
 rs: stalaktiti
 ru: сталактиты
@@ -2418,6 +2439,7 @@ de: Stalagmiten
 en: stalagmites
 es: estalagmitas
 fr: stalagmites
+it: stalagmiti
 pt: estalagmites
 rs: stalagmiti
 ru: сталагмиты
@@ -2432,7 +2454,7 @@ de: Säule
 el: κολόνα
 en: pillar
 es: columna
-fr: pillier
+fr: colonne
 it: colonna
 mi: pou
 pl: stalagnat
@@ -2451,7 +2473,8 @@ cs: stalagnáty
 de: Säulen
 en: pillars
 es: columnas
-fr: pilliers
+fr: colonnes
+it: colonne
 pt: colunas
 rs: stubovi
 ru: колонны
@@ -2520,8 +2543,8 @@ de: Sinterfahne
 el: κουρτίνα
 en: curtain
 es: bandera
-fr: rideau, draperie
-it: cortina
+fr: draperie
+it: vela
 mi: araia
 pl: draperie naciekowe
 pt: cortina
@@ -2541,7 +2564,7 @@ el: μακαρόνια
 en: soda straw
 es: fistulosa (macarones)
 fr: fistuleuse
-it: tubolare
+it: cannula
 mi: pū ngote
 pl: nacieki
 pt: canudo
@@ -2562,11 +2585,11 @@ el: μανιτάρια από σταλαγμιτικό υλικό
 en: popcorn
 es: coliflor
 fr: choux-fleur
-it: cavolfiore
+it: coralloide
 mi: kanga pāhuuhuu
 pl: pizolity
 pt: couve-flor
-rs: kalcitni koral
+rs: korali
 ru: коралиты
 sk: pizolity
 sl: karfiola
@@ -2622,7 +2645,7 @@ de: Excentrique
 el: ελικτίτης
 en: helictite
 es: excéntrica
-fr: excentrique/hélictite
+fr: excentrique
 it: eccentrica
 mi: pākeho torotoro
 pl: heliktyt
@@ -2638,7 +2661,10 @@ zh_CN: 卷曲石
 therion: point helictites
 de: Heliktiten
 en: helictites
+fr: excentriques
+it: eccentriche
 pt: helictites
+rs: heliktiti
 
 therion: point aragonite
 bg: арагонит
@@ -2669,7 +2695,7 @@ de: Kristall
 el: κρύσταλλο
 en: crystal
 es: cristal
-fr: cristaux
+fr: cristal
 it: cristallo
 mi: kohatu piata
 pl: kryształ
@@ -2689,8 +2715,8 @@ de: Wandsinter
 el: ασβεστίτης τοιχώματος
 en: wall calcite
 es: pared de calcita
-fr: mur, calcite
-it: calcite
+fr: paroi calcitée
+it: parete di calcite
 mi: tāra a nga roimata a pakeho
 pl: wapienna powłoka
 pt_BR: parede de calcita
@@ -2750,12 +2776,12 @@ de: Sinterbarriere
 el: γκουρ (λιθωματικό φράγμα)
 en: rimstone dam
 es: gour seco
-fr: gours
+fr: barrage de gour
 it: gour
 mi: kōhatu matatara
 pl: naciekowa przegroda
 pt: travertino vazio
-rs: travertinski zid
+rs: travertinska pregrada
 ru: гуры без воды
 sk: sintrová hrádza
 sl: suha ponvica
@@ -2810,7 +2836,7 @@ de: Karren
 el: κάρρεν - γυμνός καρστικοποιημένος βράχος
 en: karren
 es: lapiaz
-fr: lapiez
+fr: lapiaz
 it: karren
 mi: awaawa
 pl: żłobki krasowe
@@ -2830,7 +2856,7 @@ de: Fließfacette
 el: σκάλοπ (κενά διάβρωσης)
 en: scallop
 es: huellas de corriente - cavitaciones
-fr: vagues d’érosion (coups de gouge)
+fr: vagues d’érosion
 it: scallop
 mi: anatipa
 pl: formy erozyjne
@@ -2870,7 +2896,7 @@ de: schwimmendes Kalkhäutchen
 el: σταλαγμιτικός κώνος που επιπλέει
 en: raft cone
 es: conos
-fr: cone
+fr: cône de calcite
 it: calcite flottante
 mi: korere a mōkihi kōhatu hōhonu
 pl: nanios
@@ -2890,12 +2916,12 @@ de: archäologischer Fund
 el: αρχαιολογικό εύρημα
 en: archaeological material
 es: yacimiento arqueológico
-fr: matériel archéo
+fr: matériel archéologique
 it: materiale archeologico
 mi: taonga o nehe
 pl: znaleziska archeologiczne
 pt: material arqueológico
-rs: arheološki materijal
+rs: arheološki nalaz
 ru: археологическая находка
 sk: archeologické nálezy
 sl: arheološke najdbe
@@ -2910,12 +2936,12 @@ de: paläontologischer Fund
 el: παλαιοντολογικό εύρημα
 en: paleo material
 es: yacimiento paleontológico
-fr: matériel paléo
-it: materiale paleologico
+fr: matériel paléontologique
+it: materiale paleontologico
 mi: taiao taonga o nehe
 pl: znaleziska paleontologiczne
 pt: material paleontológico
-rs: paleontološki materijal
+rs: paleontološki nalaz
 ru: палео-находка
 sk: paleontologické nálezy
 sl: paleontološke najdbe
@@ -2971,7 +2997,7 @@ el: χωρίς υλικά
 en: no equipment!
 es: sin equipar!
 fr: pas d’équipement
-it: senza armo
+it: armo assente!
 mi: wahi a taonga mahi kore
 pl: miejsce bez punktu asekuracyjnego
 pt: sem equipamento
@@ -3032,12 +3058,12 @@ de: Drahtseilleiter
 el: ανεμόσκαλα
 en: rope ladder
 es: escala de cuerda
-fr: échelle de corde
+fr: échelle souple
 it: scala di corda
 mi: arawhata taura
 pl: drabinka linowa
 pt: escada de corda
-rs: lestvice od užeta
+rs: viseće lestvice
 ru: гибкая лестница
 sk: lanový rebrík
 sl: lestvice
@@ -3052,12 +3078,12 @@ de: Drahtseilleiter
 el: ανεμόσκαλα
 en: rope ladder
 es: escala de cuerda
-fr: échelle de corde
+fr: échelle souple
 it: scala di corda
 mi: arawhata taura
 pl: drabinka linowa
 pt: escada de corda
-rs: lestvice od užeta
+rs: viseće lestvice
 ru: гибкая лестница
 sk: lanový rebrík
 sl: lestvice
@@ -3077,7 +3103,7 @@ it: scala fissa
 mi: arawhata
 pl: sztywna drabinka
 pt: escada fixa
-rs: stalne lestvice
+rs: fiksirane lestvice
 ru: жесткая лестница
 sk: fixný rebrík
 sl: klini
@@ -3097,7 +3123,7 @@ it: scala fissa
 mi: arawhata
 pl: sztywna drabinka
 pt: escada fixa
-rs: stalne lestvice
+rs: fiksirane lestvice
 ru: жесткая лестница
 sk: fixný rebrík
 sl: klini
@@ -3127,182 +3153,290 @@ zh_CN: 梯坎
 therion: point altar
 de: Altar
 en: altar
+fr: autel
+it: altare
 pt: altar
+rs: oltar
 
 therion: point archeo-excavation
 de: Archäologische Ausgrabung
 en: archaeological excavation
+fr: fouille archéologique
+it: scavo archeologico
 pt: escavação arqueológica
+rs: arheološka iskopavanja
 
 therion: point audio
 de: Ton
 en: audio
+fr: audio
+it: audio
 pt: áudio
+rs: razglas
 
 therion: point bat
 de: Fledermaus
 en: bat
+fr: chiroptère
+it: pipistrello
 pt: morcegos
+rs: slepi miš
 
 therion: point bones
 de: Knochen
 en: bones
+fr: ossement
+it: ossi
 pt: ossos
+rs: kosti
 
 therion: point curtains
 de: Vorhänge
 en: curtains
+fr: draperies
+it: vele
 pt: cortinas
+rs: draperije
 
 therion: point danger
 de: Gefahr
 en: danger
+fr: danger
+it: pericolo
 pt: perigo
+rs: opasnost
 
 therion: point disc-pillar
 de: Scheibe auf Säule
 en: disc on pillar
+fr: disque sur colonne
+it: disco su colonna
 pt: disco em coluna
+rs: disk na stubu
 
 therion: point disc-stalactite
 de: Scheibe auf Stalaktit
 en: disc on stalactite
+fr: disque sur stalactite
+it: disco su stalattite
 pt: disco em estalactite
+rs: disk na stalaktitu
 
 therion: point disc-stalagmite
 de: Scheibe auf Stalagmit
 en: disc on stalagmite
+fr: disque sur stalagmite
+it: disco su stalagmite
 pt: disco em estalagmite
+rs: disk na stalagmitu
 
 therion: point disc-pillars
 de: Säulen mit Scheiben
 en: discs on pillars
+fr: disques sur colonnes
+it: dischi su colonne
 pt: discos em colunas
+rs: stubovi sa diskovima
 
 therion: point disc-stalactites
 de: Stalaktiten mit Scheiben
 en: discs on stalactites
+fr: disques sur stalactites
+it: dischi su stalattiti
 pt: discos em estalactites
+rs: stalaktiti sa diskovima
 
 therion: point disc-stalagmites
 de: Stalagmiten mit Scheiben
 en: discs on stalagmites
+fr: disques sur stalagmites
+it: dischi su stalagmiti
 pt: discos em estalagmites
+rs: stalagmiti sa diskovima
 
 therion: point electric-light
 de: Elektrisches Licht
 en: electric light
+fr: éclairage électrique
+it: luce elttrica
 pt: luz elétrica
+rs: električno osvetljenje
 
 therion: point ex-voto
 de: Votiv
 en: ex-voto
+fr: ex-voto
+it: ex-voto
 pt: ex-voto
+rs: zaglavak
 
 therion: point gate
 de: Tor
 en: gate
+fr: porte
+it: cancello
 pt: portão
+rs: kapija
 
 therion: point human-bones
 de: Menschliche Knochen
 en: human bones
+fr: ossements humains
+it: ossa umane
 pt: ossos humanos
+rs: ljudske kosti
 
 therion: point masonry
 de: Mauerwerk
 en: masonry
+fr: maçonnerie
+it: muratura
 pt: alvenaria
+rs: veštački zid
 
 therion: point minus
 de: Minus
 en: minus
+fr: moins
+it: meno
 pt: segue abaixo
+rs: minus
 
 therion: point mud
 de: Schlamm
 en: mud
+fr: boue
+it: fango
 pt: lama
+rs: blato
 
 therion: point nameplate
 de: Namensschild
 en: nameplate
+fr: plaque signalétique
+it: placchetta identificativa
 pt: placa de identificação
+rs: natpis
 
 therion: point no-wheelchair
 de: Kein Rollstuhlzugang
 en: not wheelchair accessible
+fr: non accessible aux personnes à mobilité réduite
+it: non accessibile con sedia a rotelle
 pt: não acessível com cadeira de rodas
+rs: nepristupačno za invalide
 
 therion: point pendant
 de: Pendant
 en: pendant
+fr: pendeloque
+it: pendente
 pt: pendente
+rs: pendant
 
 therion: point pillar-with-curtains
 de: Säule mit Vorhängen
 en: pillar with curtains
+fr: colonne avec draperies
+it: colonna con vele
 pt: coluna com cortinas
+rs: stub od draperije
 
 therion: point pillars-with-curtains
 de: Säulen mit Vorhängen
 en: pillars with curtains
+fr: colonnes avec draperies
+it: colonne con vele
 pt: colunas com cortinas
+rs: stubovi od draperije
 
 therion: point photo
 de: Foto
 en: photo
+fr: cliché
+it: foto
 pt: foto
+rs: foto
 
 therion: point plus
 de: Plus
 en: plus
+fr: plus
+it: più
 pt: segue acima
+rs: plus
 
 therion: point plus-minus
 de: Plus/Minus
 en: plus/minus
+fr: plus/moins
+it: più/meno
 pt: segue acima e abaixo
+rs: plus-minus
 
 therion: point seed-germination
 de: Samenkeimung
 en: seed-germination
+fr: graine germée
+it: germinazione di seme
 pt: germinação de semente
+rs: proklijalo seme
 
 therion: point stalactite-stalagmite
 de: Stalaktit-Stalagmit
 en: stalactite-stalagmite
+fr: stalactite-stalagmite
+it: stalattite-stalagmite
 pt: estalactite-estalagmite
+rs: stalaktit-stalagmit
 
 therion: point stalactites-stalagmites
 de: Stalaktiten-Stalagmiten
 en: stalactites-stalagmites
+fr: stalactites-stalagmites
+it: stalattiti-stalagmiti
 pt: estalactites-estalagmites
+rs: stalaktiti-stalagmiti
 
 therion: point tree-trunk
 de: Baumstamm
 en: tree-trunk
+fr: tronc d'arbre
+it: tronco d'albero
 pt: tronco de árvore
+rs: balvan
 
 therion: point volcano
 de: Vulkan
 en: volcano
+fr: volcan
+it: vulcano
 pt: vulcão
+rs: vulkan
 
 therion: point walkway
 de: Gehweg
 en: walkway
+fr: cheminement
+it: passerella
 pt: passarela
+rs: staza
 
 therion: point water-drip
 de: Wassertropfen
 en: water-drip
+fr: goutte d'eau
+it: stillicidio
 pt: gotejamento
+rs: prokapnice
 
 therion: point wheelchair
 de: Rollstuhlzugang
 en: wheelchair accessible
+fr: accessible aux personnes à mobilité réduite
+it: accessibile con sedia a rotelle
 pt: acessível com cadeira de rodas
+rs: pristupačno za invalide
 
 therion: line rope
 bg: въже
@@ -3351,8 +3485,9 @@ de: Klettersteig
 en: via-ferrata
 es: via-ferrata
 fr: via-ferrata
+it: via ferrata
 pt: via ferrata
-rs: ugrađeni stepenici
+rs: via-ferata
 ru: виа-ферата
 sk: via ferrata
 sl: ferata
@@ -3364,8 +3499,9 @@ de: Klettersteig
 en: via-ferrata
 es: via-ferrata
 fr: via-ferrata
+it: via ferrata
 pt: via ferrata
-rs: ugrađeni stepenici
+rs: via-ferata
 ru: виа-ферата
 sk: via ferrata
 sl: ferata
@@ -3399,7 +3535,7 @@ el: γέφυρα
 en: bridge
 es: puente de roca
 fr: pont
-it: ponte di roccia
+it: ponte
 mi: piriti
 pl: most
 pt: ponte
@@ -3417,7 +3553,8 @@ cs: zábradlí
 de: Geländer
 en: handrail
 es: barandilla
-fr: rampe
+fr: main-courante
+it: corrimano
 pt: corrimão
 rs: sajla
 ru: перила
@@ -3431,7 +3568,8 @@ cs: zábradlí
 de: Geländer
 en: handrail
 es: barrandilla
-fr: rampe
+fr: main-courante
+it: corrimano
 pt: corrimão
 rs: sajla
 ru: перила
@@ -3446,7 +3584,7 @@ de: Biwak
 el: κατασκήνωση
 en: camp
 es: campamento
-fr: camp
+fr: bivouac
 it: campo
 mi: topuni
 pl: biwak
@@ -3461,32 +3599,50 @@ zh_CN: 营地
 therion: line abyss-entrance
 de: Abgrund
 en: abyss-entrance
+fr: abîme
+it: ingresso abisso
 pt: entrada em abismo
+rs: natklonjen ulaz u vertikalu
 
 therion: line dripline
 de: Trauflinie
 en: dripline
+fr: porche d'entrée
+it: linea di gocciolamento
 pt: linha de gotejamento
+rs: linija kišenja
 
 therion: line fault
 de: Störung
 en: fault
+fr: faille
+it: faglia
 pt: falha
+rs: rased
 
 therion: line joint
 de: Kluft
 en: joint
+fr: joint
+it: diaclasi
 pt: fratura
+rs: pukotina
 
 therion: line low-ceiling
 de: Niedrige Decke
 en: low-ceiling
+fr: plafond bas
+it: soffitto basso
 pt: teto baixo
+rs: spuštanje tavanice
 
 therion: line pit-chimney
 de: Schacht-Schlot
 en: pit/chimney
+fr: puits-cheminée
+it: pozzo/camino
 pt: poço e clarabóia
+rs: jama/odžak
 
 therion: line rimstone-dam
 bg: сухо синтрово езеро
@@ -3496,11 +3652,12 @@ de: Sinterbarriere
 el: γκουρ (λιθωματικό φράγμα)
 en: rimstone dam
 es: gour seco
-fr: gours
+fr: barrage de gour
 it: gour
 mi: kōhatu matatara
 pl: naciekowa przegroda
 pt: travertino vazio
+rs: travertinske pregrade
 ru: гуры без воды
 sk: sintrová hrádza
 sl: suha ponvica
@@ -3520,6 +3677,7 @@ it: vasca
 mi: kōhatu kopua wai
 pl: jeziorko naciekowe
 pt: travertino cheio
+rs: travertinske kade
 ru: гуры с водой
 sk: sintrové jazierko
 sl: ponvica
@@ -3529,7 +3687,10 @@ zh_CN: 边石潭
 therion: line walkway
 de: Gehweg
 en: walkway
+fr: cheminement
+it: passerella
 pt: passarela
+rs: staza
 
 therion: point remark
 bg: забележка
@@ -3559,7 +3720,7 @@ de: Beschriftung
 el: περιγραφή
 en: label
 es: etiqueta
-fr: libellé
+fr: texte
 it: etichetta
 mi: ingoa
 pl: nazwa
@@ -3579,7 +3740,7 @@ de: Beschriftung
 el: περιγραφή
 en: label
 es: etiqueta
-fr: libellé
+fr: texte
 it: etichetta
 mi: ingoa
 pl: nazwa
@@ -3620,7 +3781,7 @@ el: Υψομετρικά
 en: Altitudes
 es: Altitudes
 fr: Altitudes
-it: Profondità
+it: Altitudini
 mi: Teitei, Tiketike
 pl: wysokości npm
 pt: Altitudes
@@ -3637,6 +3798,7 @@ de: Tiefe
 en: Depth
 es: Desnivel
 fr: Profondeur
+it: Profondità
 pt: Profundidade
 rs: Dubina
 sl: Globina
@@ -3650,11 +3812,11 @@ el: Χάρτες
 en: Maps
 es: Mapas
 fr: Cartes
-it: Mappa
+it: Mappe
 mi: Mahere whenua
 pl: mapy
 pt: Mapas
-rs: Mapa
+rs: Nacrti
 ru: Карты
 sk: Mapy
 sl: Načrti
@@ -3667,8 +3829,9 @@ de: Skizzen
 en: Scraps
 es: Trozos/cachos
 fr: Scraps
+it: Scrap
 pt: Croquis
-rs: Deo nacrta
+rs: Delovi nacrta
 sl: Izrez
 
 therion: title color-legend-survey
@@ -3676,9 +3839,10 @@ ca: Topos
 de: Vermessung
 en: Surveys
 es: Topos
-fr: Topos
+fr: Relevés
+it: Rilievi
 pt: Topos
-rs: Nacrt
+rs: Topografska merenja
 sl: Meritve
 
 therion: title color-legend-explodate
@@ -3687,6 +3851,7 @@ de: Erforschungsdatum
 en: Exploration date
 es: Fecha de exploración
 fr: Date d'exploration
+it: Date di esplorazione
 pt: Data da exploração
 rs: Datum istraživanja
 sl: Datum raziskovanja
@@ -3696,7 +3861,8 @@ ca: Data de topografia
 de: Vermessungsdatum
 en: Surveying date
 es: Fecha de topografia
-fr: Date de topographie
+fr: Date de relevé
+it: Date di rilievo
 pt: Data da topo
 rs: Datum merenja
 sl: Datum merjenja
@@ -3709,8 +3875,9 @@ en_GB: Colour legend
 en_US: Color legend
 es: Leyenda de colores
 fr: Légende colorée
+it: Legenda dei colori
 pt: Cores
-rs: Legenda
+rs: Tumač boja
 sl: Legenda barv
 
 therion: units ft
@@ -3741,7 +3908,7 @@ de: Gesamtlänge
 el: Μήκος
 en: Length
 es: Desarrollo
-fr: Longueur
+fr: Longueur 
 it: Sviluppo
 mi: Roa a ana
 pl: długość
@@ -3781,7 +3948,7 @@ de: Niveaudifferenz
 el: Βάθος
 en: Depth
 es: Desnivel
-fr: Profondeur
+fr: Dénivellation 
 it: Profondità
 mi: Hōhonu a ana, Rētōtanga
 pl: przewyższenie
@@ -3801,7 +3968,7 @@ de: Entdeckung
 el: Εξερευνητές
 en: Explored by
 es: Exploración
-fr: Explorateurs
+fr: Explorateurs 
 it: Esplorazione
 mi: Kaipokai whenua
 pl: odkryli
@@ -3821,7 +3988,7 @@ de: Entdeckung
 el: Εξερευνητής
 en: Explored by
 es: Exploración
-fr: Explorateur
+fr: Explorateur 
 it: Esplorazione
 mi: Kaipokai whenua
 pl: odkrył
@@ -3841,7 +4008,7 @@ de: Vermessung
 el: Χαρτογραφήθηκε από τους
 en: Surveyed by
 es: Topografiado por
-fr: Topographes
+fr: Topographes 
 it: Topografia
 mi: Kairūri
 pl: pomierzyli
@@ -3861,7 +4028,7 @@ de: Vermessung
 el: Χαρτογραφήθηκε από τον
 en: Surveyed by
 es: Topografiado por
-fr: Topographe
+fr: Topographe 
 it: Topografia
 mi: Kairūri
 pl: mierzył
@@ -3881,7 +4048,7 @@ de: Zeichnung
 el: Σκαρίφημα
 en: Drawn by
 es: Dibujado por
-fr: Dessinateurs
+fr: Dessinateurs 
 it: Cartografia
 mi: Kaituhi
 pl: rysowali
@@ -3901,7 +4068,7 @@ de: Zeichnung
 el: Σκαρίφημα
 en: Drawn by
 es: Dibujado por
-fr: Dessinateur
+fr: Dessinateur 
 it: Cartografia
 mi: Kaituhi
 pl: rysował
@@ -3922,7 +4089,7 @@ el: [προεπισκόπηση πάνω]
 en: [Preview above]
 es: [Vista previa superior]
 fr: [Prévisualisation au-dessus]
-it: Anteprima sopra
+it: [Anteprima sopra]
 mi: Tuhi a ana ki runga
 pl: widok z góry
 pt: [Visualização acima]
@@ -3942,7 +4109,7 @@ el: [προεπισκόπηση κάτω]
 en: [Preview below]
 es: [Vista previa inferior]
 fr: [Prévisualisation au-dessous]
-it: Anteprima sotto
+it: [Anteprima sotto]
 mi: Tuhi a ana ki raro
 pl: widok z dołu
 pt: [Visualização abaixo]
@@ -3961,8 +4128,8 @@ de: Erdoberfläche
 el: [χάρτης επιφάνειας]
 en: [Surface Image]
 es: [Mapa de superficie]
-fr: [Carte extérieure]
-it: Mappa superficie
+fr: [Image de surface]
+it: [Mappa di superficie]
 mi: Konohi o te whenua
 pl: mapa powierzchni
 pt: [Imagem da superfície]

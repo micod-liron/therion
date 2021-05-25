@@ -25,18 +25,14 @@
  * --------------------------------------------------------------------
  */
  
+#include "therion.h"
 #include "thparse.h"
 #include "thtfangle.h"
 #include "thexception.h"
 #include "thinfnan.h"
 #include <math.h>
 
-thtfangle::thtfangle() {
-
-  this->units = TT_TFU_DEG;
-  this->allow_percentage = false;
-
-}
+thtfangle::thtfangle() : thtf(TT_TFU_DEG) {}
 
 bool mils_warning(true);
 
@@ -67,7 +63,7 @@ void thtfangle::parse_units(char * ustr)
 				break;
 			}
     case TT_TFU_UNKNOWN_ANGLE:
-      ththrow(("unknown angle unit -- %s", ustr))
+      ththrow("unknown angle unit -- {}", ustr);
       break;
   }
   

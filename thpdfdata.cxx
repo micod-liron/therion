@@ -36,16 +36,14 @@
 #include "thpdfdata.h"
 #include "thlang.h"
 
-using namespace std;
-
-list<scraprecord> SCRAPLIST;
-list<legendrecord> LEGENDLIST;
-list<colorlegendrecord> COLORLEGENDLIST;
-map<int,layerrecord> LAYERHASH;
-set<int> MAP_PREVIEW_UP, MAP_PREVIEW_DOWN;
+std::list<scraprecord> SCRAPLIST;
+std::list<legendrecord> LEGENDLIST;
+std::list<colorlegendrecord> COLORLEGENDLIST;
+std::map<int,layerrecord> LAYERHASH;
+std::set<int> MAP_PREVIEW_UP, MAP_PREVIEW_DOWN;
 layout LAYOUT;
 
-list<surfpictrecord> SURFPICTLIST;
+std::list<surfpictrecord> SURFPICTLIST;
 
 scraprecord::scraprecord() {
   S1=0.0; S2=0.0;
@@ -56,6 +54,7 @@ scraprecord::scraprecord() {
   I1=0.0; I2=0.0; I3=0.0; I4=0.0; 
   E1=0.0; E2=0.0; E3=0.0; E4=0.0; 
   X1=0.0; X2=0.0; X3=0.0; X4=0.0; 
+  gour_n=0; gour_xmin=0.0; gour_xmax=0.0; gour_ymin=0.0; gour_ymax=0.0;
 }
 
 layerrecord::layerrecord() {
@@ -99,6 +98,9 @@ layout::layout() {
 
   colored_text = true;
   grid_coord_freq = 2;
+
+  alpha_step = 5;
+  smooth_shading = shading_mode::quick;
 }
 
 paired::paired() {

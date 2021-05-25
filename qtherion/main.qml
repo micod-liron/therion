@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import QtQuick.Dialogs 1.2
+import Qt.labs.platform 1.1
 import QtQuick.Shapes 1.15
 import Qt.labs.qmlmodels 1.0
 import QTherion 1.0
@@ -23,13 +23,10 @@ ApplicationWindow {
         }
     }
 
-    FileDialog {
+    FolderDialog {
         id: projectDialog
-        selectMultiple: false
-        selectExisting: true
-        selectFolder: true
         onAccepted: {
-            QTherion.openProject(fileUrl)
+            QTherion.openProject(projectDialog.folder)
         }
     }
 
