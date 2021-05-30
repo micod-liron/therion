@@ -6,9 +6,7 @@
 
 #include "scrapmodel.h"
 
-// TODO assign correct control point to relevant line point
 // TODO move control points in sync with line point
-// TODO explicit canvas size
 // TODO scaling
 // TODO graphics config dialog
 // TODO selection models (e.g. cps visible only on select)

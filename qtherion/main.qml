@@ -93,7 +93,7 @@ ApplicationWindow {
 
                                     Item {
                                         Shape {
-                                            visible: hasCpsRole
+                                            visible: hasCp1Role
                                             ShapePath {
                                                 strokeWidth: 1
                                                 strokeColor: "blue"
@@ -105,6 +105,9 @@ ApplicationWindow {
                                                     y: cp1yRole
                                                 }
                                             }
+                                        }
+                                        Shape {
+                                            visible: hasCp2Role
                                             ShapePath {
                                                 strokeWidth: 1
                                                 strokeColor: "blue"
@@ -146,7 +149,7 @@ ApplicationWindow {
                                             height: width
                                             x: cp1xRole-width/2
                                             y: cp1yRole-width/2
-                                            visible: hasCpsRole
+                                            visible: hasCp1Role
                                             onXChanged: cp1xRole = x+width/2
                                             onYChanged: cp1yRole = y+width/2
                                             DragHandler {}
@@ -160,7 +163,7 @@ ApplicationWindow {
                                             height: width
                                             x: cp2xRole-width/2
                                             y: cp2yRole-width/2
-                                            visible: hasCpsRole
+                                            visible: hasCp2Role
                                             onXChanged: cp2xRole = x+width/2
                                             onYChanged: cp2yRole = y+width/2
                                             DragHandler {}

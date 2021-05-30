@@ -16,7 +16,8 @@ class LinePointModel : public QAbstractListModel
         double cp1y{};
         double cp2x{};
         double cp2y{};
-        bool hasCps{false};
+        bool hasCp1{false};
+        bool hasCp2{false};
     };
 
     QList<LinePoint> m_points;
@@ -29,7 +30,8 @@ public:
         Cp1yRole,
         Cp2xRole,
         Cp2yRole,
-        HasCpsRole
+        HasCp1Role,
+        HasCp2Role
     };
     Q_ENUM(LinePointRole)
     explicit LinePointModel(QObject *parent = nullptr);

@@ -34,8 +34,10 @@ QVariant LinePointModel::data(const QModelIndex &index, int role) const
         return point.cp2x;
     case Cp2yRole:
         return point.cp2y;
-    case HasCpsRole:
-        return point.hasCps;
+    case HasCp1Role:
+        return point.hasCp1;
+    case HasCp2Role:
+        return point.hasCp2;
     }
 
     return {};
@@ -103,11 +105,20 @@ bool LinePointModel::setData(const QModelIndex &index, const QVariant &value, in
         }
         break;
     }
-    case LinePointModel::HasCpsRole: {
-        bool newHasCps = value.toDouble();
-        if (point.hasCps != newHasCps) {
-            point.hasCps = newHasCps;
-            emit dataChanged(index, index, {HasCpsRole});
+    case LinePointModel::HasCp1Role: {
+        bool newHasCp1 = value.toDouble();
+        if (point.hasCp1 != newHasCp1) {
+            point.hasCp1 = newHasCp1;
+            emit dataChanged(index, index, {HasCp1Role});
+            return true;
+        }
+        break;
+    }
+    case LinePointModel::HasCp2Role: {
+        bool newHasCp2 = value.toDouble();
+        if (point.hasCp2 != newHasCp2) {
+            point.hasCp2 = newHasCp2;
+            emit dataChanged(index, index, {HasCp2Role});
             return true;
         }
         break;
@@ -124,45 +135,53 @@ QHash<int, QByteArray> LinePointModel::roleNames() const {
         {Cp1yRole, "cp1yRole"},
         {Cp2xRole, "cp2xRole"},
         {Cp2yRole, "cp2yRole"},
-        {HasCpsRole, "hasCpsRole"}
+        {HasCp1Role, "hasCp1Role"},
+        {HasCp2Role, "hasCp2Role"}
     };
 }
 
 void LinePointModel::fromJson(QJsonArray array) {
     beginResetModel();
     m_points.clear();
-    for (auto val : array) {
-        QJsonObject obj = val.toObject();
-        QJsonArray point = obj["point"].toArray();
-        bool hasCps = obj.contains("cp1") && obj.contains("cp2");
+    for (int i = 0; i < array.size(); ++i) {
+        QJsonObject current = array[i].toObject();
+        QJsonObject next = i+1 < array.size() ? array[i+1].toObject() : QJsonObject{};
         LinePoint linePoint;
+        QJsonArray point = current["point"].toArray();
         linePoint.x = point[0].toDouble();
         linePoint.y = point[1].toDouble();
-        linePoint.hasCps = hasCps;
-        if (hasCps) {
-            QJsonArray cp1 = obj["cp1"].toArray();
-            QJsonArray cp2 = obj["cp2"].toArray();
+        if (next.contains("cp1")) {
+            QJsonArray cp1 = next["cp1"].toArray();
             linePoint.cp1x = cp1[0].toDouble();
             linePoint.cp1y = cp1[1].toDouble();
+            linePoint.hasCp1 = true;
+        }
+        if (current.contains("cp2")) {
+            QJsonArray cp2 = current["cp2"].toArray();
             linePoint.cp2x = cp2[0].toDouble();
             linePoint.cp2y = cp2[1].toDouble();
+            linePoint.hasCp2 = true;
         }
         m_points << linePoint;
     }
     endResetModel();
-
 }
 
 QString LinePointModel::svgPath() const {
+    if (m_points.size() < 2) {
+        return {};
+    }
     QString path;
-    for (int i = 0; i < m_points.size(); ++i) {
+    for (int i = 0; i < m_points.size()-1; ++i) {
         const LinePoint &p = m_points[i];
+        const LinePoint &next = m_points[i+1];
         if (i == 0) {
             path = QString("M %1 %2").arg(p.x).arg(p.y);
-        } else if (!p.hasCps) {
-            path += QString(" L %1 %2").arg(p.x).arg(p.y);
+        }
+        if (!p.hasCp1) {
+            path += QString(" L %1 %2").arg(next.x).arg(next.y);
         } else {
-            path += QString(" C %1 %2, %3 %4, %5 %6").arg(p.cp1x).arg(p.cp1y).arg(p.cp2x).arg(p.cp2y).arg(p.x).arg(p.y);
+            path += QString(" C %1 %2, %3 %4, %5 %6").arg(p.cp1x).arg(p.cp1y).arg(next.cp2x).arg(next.cp2y).arg(next.x).arg(next.y);
         }
     }
     return path;
